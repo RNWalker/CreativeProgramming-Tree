@@ -4,10 +4,10 @@ int counter;
 int counter2;
 float xg = 80; //makes tree narrower
 float yg = 52; // makes tree shorter
-int trunkSegments = int(random(100))+5;
+int trunkSegments = int(random(100))+5; //between 5 and 104
 int nodeLimit = 20000;
 Point2D.Float[]pts = new Point2D.Float[nodeLimit];
-int branchLimit = 1000;
+int branchLimit = 2000;
 float trunkLength = int(random(50))+130;
 float[]lean2 = new float[trunkSegments + 1];
 float radius = 26;
@@ -15,7 +15,7 @@ float radius = 26;
 void setup(){
   size(900,600);
   background(255);
-  stroke(30,10,5);
+  stroke(30,10,5); //colour of trunk
   
   trunk(); }
   
@@ -36,7 +36,7 @@ void branch (Point2D.Float[]pts) {
   int stemCount = 2; //makes more stems, less is more! 1 is just a single squiggly line
   
   if(counter2<branchLimit){
-    strokeWeight(radius);
+    strokeWeight(radius+5);
     
     if(counter2<200){
       yg -=random(.354);
